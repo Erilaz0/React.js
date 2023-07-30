@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form"
 import { CartContext } from "../context/cartContext";
 import { collection, addDoc } from "firebase/firestore";
 import { db } from "../firebase/config"
-import { FormularioStyle, FormularioDivStyle} from "./FormularioStyle"
+import { FormularioStyle, FormularioDivStyle} from "../style/FormularioStyle"
 
 
 export const FinalizarCompra = () =>{

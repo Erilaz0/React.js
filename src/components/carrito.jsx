@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { CartContext } from "../context/cartContext";
 import { Link } from "react-router-dom";
-import { StyleDivCarrito, fontSize } from "./CartStyle";
+import { StyleDivCarrito, fontSize } from "../style/CartStyle";
 
 export const Carrito = ()=>{
 

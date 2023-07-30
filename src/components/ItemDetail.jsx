@@ -1,7 +1,7 @@
 import { CartContext } from "../context/cartContext"
 import { ItemCount } from "./itemCount"
 import { useContext, useState } from "react"
-import { ItemDetailStyle } from "./ItemDetailStyle"
+import { ItemDetailStyle } from "../style/ItemDetailStyle"
 
 export const ItemDetail = ({planta}) => {
 
