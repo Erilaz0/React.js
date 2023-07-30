@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
-import data from '../data/productos.json'
 import { ItemDetail } from './ItemDetail';
-
+import { doc, getDoc} from "firebase/firestore"
+import { db } from "../firebase/config"
 
 
 
@@ -14,31 +14,27 @@ export const ItemDetailContainer = (props) => {
 
    const {id} = useParams()
 
-   useEffect(()=>{ //cada ves que itemlistcontainer se renderize se ejecutara este useEffect
-      const promesa = new Promise((resolve, reject) => {
-
-         setTimeout(()=>{
-
-          resolve(data) //guardamos la dta del json
+   useEffect(()=>{ 
 
 
-         },2000)
+     const itemDataBaseDetail = doc(db,"items",id)//de la base de datos obtenemos de la coleccion items el articulo que tenga el mismo id que en la url
+     getDoc(itemDataBaseDetail)
+      .then((snapshot) => {
+
+         SetProduct({...snapshot.data(), id : snapshot.id}) //obtenemos el product y su id, y lo almacnamos en SetProduct para que lo unico q se muestre sea el producto dl cual accedemos al detalle
+
+         
+
       })
-      promesa.then(result =>{
-   
-        SetProduct(result[2])
 
 
-      }) //aca es cuando la data del json pasa a esatr dentro de la variable products, ya que setProducts es la funcion
-                                                 //encargada de modificar el valor de la variable que lleva a su lado, en este caso le decimos que products va a pasar a valer data.
-
-   },[])
+   },[id])
 
 
    return( 
    <Container>
       <h1>{props.greeting}</h1>
-      {product.length === 0 ? (<div>Loading...</div> ) : ( <ItemDetail planta = {product}/>
+      {product.length > 0 ? (<div>Loading...</div> ) : ( <ItemDetail planta = {product}/>
       //aca products ya es === data, por lo que podemos empezar a usar lo que hay en el json, para ello primero nos aseguramos de que este vacio o no
       //y con map recorremos los arrays del json y mostramos lo que contiene
 

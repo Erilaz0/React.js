@@ -1,5 +1,30 @@
 # Getting Started with Create React App
 
+
+Bienvenido/a al proyecto de la tienda iCommerce de venta de plantas! En esta aplicación, simulamos una tienda en línea donde los usuarios pueden explorar y comprar una amplia variedad de plantas.
+
+Desafíos y Funcionalidades Clave
+Durante el desarrollo de este proyecto, enfrenté algunos desafíos interesantes:
+
+Implementación del Carrito de Compras: Uno de los principales desafíos fue crear un carrito de compras funcional que permitiera a los usuarios agregar y eliminar productos mientras navegan por la tienda.
+
+Uso y Funcionamiento de useContext: También encontré dificultades para comprender y utilizar correctamente el hook useContext de React para gestionar el estado global del carrito de compras y compartirlo con otros componentes.
+
+Doble Autenticación con Gmail: Para garantizar la seguridad de los usuarios antes de finalizar la compra, implementé un formulario de doble autenticación con Gmail utilizando la biblioteca React Hook Form, lo que facilitó la creación y validación del formulario.
+
+Las principales funcionalidades de la aplicación incluyen:
+
+Vista de Productos: Los usuarios pueden explorar una amplia variedad de plantas disponibles para su compra, con detalles y precios.
+
+Carrito de Compras: Los usuarios pueden agregar productos al carrito de compras y ver un resumen de sus selecciones.
+
+Autenticación con Gmail: Antes de finalizar la compra, se requiere una doble autenticación mediante Gmail.
+
+Uso de React Hook Form
+Para facilitar la creación del formulario de autenticación y la gestión del estado global del carrito de compras, utilicé la biblioteca React Hook Form y el hook useContext de React.
+
+React Hook Form: Esta biblioteca simplificó la creación del formulario de autenticación con Gmail, manejando las validaciones y el envío de datos de manera sencilla.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
